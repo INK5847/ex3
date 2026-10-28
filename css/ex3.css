@@ -96,6 +96,39 @@ nav a:hover{
     color: rgba(87, 117, 144, 1);
 }
 
+/*marquee*/
+.marquee{/*畫面上可視範圍*/
+    width: 100%;
+    overflow: hidden;/*多的內容藏起來*/
+    background: rgba(251, 139, 36, 1);
+    color: rgba(255, 255, 255, 1);
+    padding: 20px 0;
+}
+
+.marquee-track{
+    display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;/*名稱 秒數 移動方式 播放次數*/
+}
+
+@keyframes marquee{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-content{
+    flex-shrink: 0;/*讓子元素不因為flex空間不足而縮小*/
+    padding-right: 0px;/*讓文字段落後面不要有空白*/
+    white-space: nowrap;/*讓文字維持在同一行*/
+    font-size: max(1.5rem, 1vw); 
+}
+
+
+
 /*section*/
 section{
     display: flex;
